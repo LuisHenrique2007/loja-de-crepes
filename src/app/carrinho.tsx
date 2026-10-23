@@ -7,8 +7,6 @@ import {
   Image,
 } from "react-native";
 
-//import frango from "@/assets/crepedefrango";
-
 export default function EntryForm() {
   return (
     <ScrollView style={styles.container}>

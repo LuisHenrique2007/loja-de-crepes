@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import { Image } from 'expo-image';
+import { Produto } from "./Produto";
 
-//import frango from "@/assets/crepedefrango";
 
 export default function HomeScreen() {
   return (
@@ -38,15 +39,15 @@ export default function HomeScreen() {
 
         <Link href="/login" asChild>
           <TouchableOpacity style={styles.category}>
-            <Text style={styles.emoji}>🍕</Text>
-            <Text>Frango</Text>
-            <Text>Login.tsx</Text>
+            <Produto  imagem={require("@/assets/crepe/crepedefrango.jpg")} preco={7} descricao={"Crepe de frango"}/>
           </TouchableOpacity>
         </Link>
 
         <Link href="/compra" asChild>
         <TouchableOpacity style={styles.category}>
-          <Text style={styles.emoji}>🍕</Text>
+          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
+            style={styles.imagem}
+            />
           <Text>Choclate e morango</Text>
           <Text>Compra.tsx</Text>
         </TouchableOpacity>
@@ -54,12 +55,43 @@ export default function HomeScreen() {
 
         <Link href="/carrinho" asChild>
         <TouchableOpacity style={styles.category}>
-          <Text style={styles.emoji}>🥤</Text>
+          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
+            style={styles.imagem}
+            />
           <Text>Francês</Text>
           <Text>carrinho.tsx</Text>
         </TouchableOpacity>
         </Link>
-        
+
+        <Link href="/compra" asChild>
+        <TouchableOpacity style={styles.category}>
+          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
+            style={styles.imagem}
+            />
+          <Text>Francês</Text>
+          <Text>carrinho.tsx</Text>
+        </TouchableOpacity>
+        </Link>
+
+        <Link href="/compra" asChild>
+        <TouchableOpacity style={styles.category}>
+          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
+            style={styles.imagem}
+            />
+          <Text>Francês</Text>
+          <Text>carrinho.tsx</Text>
+        </TouchableOpacity>
+        </Link>
+
+        <Link href="/compra" asChild>
+        <TouchableOpacity style={styles.category}>
+          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
+            style={styles.imagem}
+            />
+          <Text>Francês</Text>
+          <Text>carrinho.tsx</Text>
+        </TouchableOpacity>
+        </Link>
 
       </View>
 
@@ -143,7 +175,7 @@ const styles = StyleSheet.create({
   },
 
   category: {
-    width: "30%",
+    width: "20%",
     backgroundColor: "#FFF3E6",
     paddingVertical: 18,
     borderRadius: 15,
@@ -153,6 +185,10 @@ const styles = StyleSheet.create({
   emoji: {
     fontSize: 30,
     marginBottom: 5,
+  },
+  imagem:{
+    width: "50%",
+    aspectRatio: 298 / 171,
   },
 
 });

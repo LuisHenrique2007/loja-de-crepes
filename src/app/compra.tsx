@@ -5,19 +5,13 @@ import {
     TouchableOpacity,
 } from "react-native";
 import{Link} from 'expo-router';
+import { Produto } from "./Produto";
 
-//import frango from "@/assets/crepedefrango";
-
+//Colocar em <produto>, o produto que foi clicado.
 export default function BuyOrPass() {
   return (
     <ScrollView style={styles.container}>
-        <Text style={styles.emoji}>imagem do produto</Text>
-        <Text>
-            Descrição do produto
-        </Text>
-        <Text style={styles.precos}>
-            R$ preço do produto
-        </Text>
+        <Produto imagem={require("@/assets/crepe/crepedefrango.jpg")} preco={7} descricao={"crepe de frango"}/>
         <Link href="/carrinho">
         <TouchableOpacity style={styles.botao}>
             <Text>
@@ -53,5 +47,5 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems:"center",
 
-  }
+  },
 });
