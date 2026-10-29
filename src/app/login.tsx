@@ -7,14 +7,13 @@ import {
   Image,
 } from "react-native";
 
-//import frango from "@/assets/crepedefrango";
 
 export default function EntryForm() {
   return (
     <ScrollView style={styles.container}>
       <View>
         <Text>
-          Bom dia
+          Bom dia! Aqui terá uma tela de login
         </Text>
       </View>
     </ScrollView>

@@ -13,7 +13,7 @@ export function Produto(props) {
                 {descricao}
             </Text>
             <Text style={styles.preco}>
-                R$ {preco}
+                R$ {preco}<Text style={styles.precinho}>,99</Text>
             </Text>
         </View>
     );
@@ -31,5 +31,9 @@ const styles=StyleSheet.create({
         fontSize: 15,
         fontWeight: "bold",
         paddingTop: "1%",
+    },
+    precinho:{
+        fontSize: 8,
+        fontWeight:"normal"
     },
 });

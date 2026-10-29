@@ -39,61 +39,42 @@ export default function HomeScreen() {
 
         <Link href="/login" asChild>
           <TouchableOpacity style={styles.category}>
-            <Produto  imagem={require("@/assets/crepe/crepedefrango.jpg")} preco={7} descricao={"Crepe de frango"}/>
+            <Produto  imagem={require("@/assets/crepe/CrepeDeFrango.png")} preco={5} descricao={"Crepe de frango"}/>
           </TouchableOpacity>
         </Link>
 
         <Link href="/compra" asChild>
         <TouchableOpacity style={styles.category}>
-          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
-            style={styles.imagem}
-            />
-          <Text>Choclate e morango</Text>
-          <Text>Compra.tsx</Text>
+          <Produto imagem={require("@/assets/crepe/CrepeDeChocolate.png")} preco={5} descricao={"Crepe de chocolate"}/>
         </TouchableOpacity>
         </Link>
 
         <Link href="/carrinho" asChild>
         <TouchableOpacity style={styles.category}>
-          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
-            style={styles.imagem}
-            />
-          <Text>Francês</Text>
-          <Text>carrinho.tsx</Text>
+           <Produto imagem={require("@/assets/crepe/CrepeSuíço.png")} preco={1} descricao={"Crepe suíço"}/>
         </TouchableOpacity>
         </Link>
+        </View>
+        <View style={styles.categories}>
+          <Link href="/compra" asChild>
+          <TouchableOpacity style={styles.category}>
+            <Produto imagem={require("@/assets/crepe/CrepeDeDoceDeLeite.png")} preco={7} descricao={"Crepe de doce de leite"}/>
+          </TouchableOpacity>
+          </Link>
 
-        <Link href="/compra" asChild>
-        <TouchableOpacity style={styles.category}>
-          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
-            style={styles.imagem}
-            />
-          <Text>Francês</Text>
-          <Text>carrinho.tsx</Text>
-        </TouchableOpacity>
-        </Link>
+          <Link href="/compra" asChild>
+          <TouchableOpacity style={styles.category}>
+            <Produto imagem={require("@/assets/crepe/CrepeDePresunto.png")} preco={3} descricao={"Crepe de presunto"}/>
+          </TouchableOpacity>
+          </Link>
 
-        <Link href="/compra" asChild>
-        <TouchableOpacity style={styles.category}>
-          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
-            style={styles.imagem}
-            />
-          <Text>Francês</Text>
-          <Text>carrinho.tsx</Text>
-        </TouchableOpacity>
-        </Link>
-
-        <Link href="/compra" asChild>
-        <TouchableOpacity style={styles.category}>
-          <Image source={require('@/assets/crepe/crepedefrango.jpg')}
-            style={styles.imagem}
-            />
-          <Text>Francês</Text>
-          <Text>carrinho.tsx</Text>
-        </TouchableOpacity>
-        </Link>
-
-      </View>
+          <Link href="/compra" asChild>
+          <TouchableOpacity style={styles.category}>
+            <Produto imagem={require("@/assets/crepe/CrepeDeAveia.png")} preco={3} descricao={"Crepe de aveia"}/>
+          </TouchableOpacity>
+          </Link>
+        </View>
+      
 
     </ScrollView>
   );
@@ -171,7 +152,7 @@ const styles = StyleSheet.create({
 
   categories: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    marginTop: 10,
   },
 
   category: {
@@ -179,6 +160,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF3E6",
     paddingVertical: 18,
     borderRadius: 15,
+    marginHorizontal: 5,
     alignItems: "center",
   },
 

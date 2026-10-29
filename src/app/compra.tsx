@@ -11,7 +11,7 @@ import { Produto } from "./Produto";
 export default function BuyOrPass() {
   return (
     <ScrollView style={styles.container}>
-        <Produto imagem={require("@/assets/crepe/crepedefrango.jpg")} preco={7} descricao={"crepe de frango"}/>
+        <Produto imagem={require("@/assets/crepe/CrepeDeFrango.png")} preco={7} descricao={"crepe de frango"}/>
         <Link href="/carrinho">
         <TouchableOpacity style={styles.botao}>
             <Text>
@@ -28,24 +28,15 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#FFF3E6",
     paddingTop:100,
-  },
-    emoji: {
-    fontSize: 30,
-    marginBottom: 5,
-  },
-  precos: {
-    fontSize: 22,
-    fontWeight: "bold",
-    marginTop: 10,
-    marginBottom: 15,
   },
   botao:{
     width:"30%" ,
     backgroundColor:"#FE8C00",
     borderRadius: 6,
     alignItems:"center",
-
+    fontWeight:"bold",
+    marginTop:100,
   },
 });
