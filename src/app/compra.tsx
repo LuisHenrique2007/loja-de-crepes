@@ -1,6 +1,5 @@
 import {
     ScrollView,
-    StyleSheet,
     Text,
     TouchableOpacity,
 } from "react-native";
@@ -10,10 +9,10 @@ import { Produto } from "./Produto";
 //Colocar em <produto>, o produto que foi clicado.
 export default function BuyOrPass() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView className="flex-1 bg-white">
         <Produto imagem={require("@/assets/crepe/CrepeDeFrango.png")} preco={7} descricao={"crepe de frango"}/>
         <Link href="/carrinho">
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity className="bg-orange-500 rounded font-bold mt-36">
             <Text>
                 + Adicionar ao carrinho
             </Text>
@@ -23,20 +22,3 @@ export default function BuyOrPass() {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: "#FFF3E6",
-    paddingTop:100,
-  },
-  botao:{
-    width:"30%" ,
-    backgroundColor:"#FE8C00",
-    borderRadius: 6,
-    alignItems:"center",
-    fontWeight:"bold",
-    marginTop:100,
-  },
-});
