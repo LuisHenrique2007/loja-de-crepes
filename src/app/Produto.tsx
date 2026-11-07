@@ -7,7 +7,7 @@ export function Produto(props) {
     const {imagem, preco, descricao} = props;
     return(
         <View className="flex-1 bg-orange-100">
-            <Image source={imagem} className="w-[70%] aspect-[298/171]"/>
+            <Image source={imagem} className="w-[60%] aspect-[1/1]"/>
             <Text>
                 {descricao}
             </Text>
