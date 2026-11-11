@@ -3,8 +3,12 @@ import { View,
  } from "react-native";
 import { Image } from "expo-image";
 
-export function Produto(props) {
-    const {imagem, preco, descricao} = props;
+type ProdutoProps={
+    imagem:string,
+    preco: number,
+    descricao: string
+}
+export function Produto({imagem, preco, descricao}:ProdutoProps) {
     return(
         <View className="flex-1 bg-orange-100">
             <Image source={imagem} className="w-[60%] aspect-[1/1]"/>

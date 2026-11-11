@@ -6,7 +6,8 @@ import {
 } from "react-native";
 import { Produto } from "./Produto";
 import {Link} from "expo-router";
-//
+import {ProdutoCarrinho} from "./ProdutoCarrinho";
+
 export default function carrinho() {
   return (
     <View className="flex-1 bg-white">
@@ -46,6 +47,8 @@ export default function carrinho() {
             </TouchableOpacity>
           </View>
         </View>
+
+      <ProdutoCarrinho imagem={require("@/assets/crepe/CrepeSuíço.png")} preco={1} descricao={"Crepe suíço"}/>
 
       </ScrollView>
       <View className="flex-row justify-between w-full">
