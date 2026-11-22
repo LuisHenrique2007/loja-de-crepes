@@ -4,22 +4,24 @@ import {
     View,
 } from "react-native";
 import { Produto } from "./Produto";
-
 import { useState } from "react";
 
 type produtoCarrinhoProps={
-    imagem: string,
-    preco: number,
-    descricao: string,
+    imagem: string;
+    preco: number;
+    descricao: string;
 }
 
 
 
 export function ProdutoCarrinho({imagem, preco, descricao}:produtoCarrinhoProps) {
-    const [quantidade,setQuantidade]=useState(1);
+    const [quantidade,setQuantidade]=useState(0);
 
     function excluir(){
-        alert("Aqui excluirá")
+        if(quantidade>0){
+            
+        }
+        setQuantidade(0)
     }
 
     function add(){
@@ -28,17 +30,18 @@ export function ProdutoCarrinho({imagem, preco, descricao}:produtoCarrinhoProps)
 
     function retirar(){
         if(quantidade>1){
-            setQuantidade(quantidade-1);}
+            setQuantidade(quantidade-1);
+        }
         else{
             excluir()
         }
     }
     return (
         <View className="flex-1 bg-white">
-            <View className="border rounded w-full h-44 flex-row flex-1 bg-orange-100 mb-2">
+            <View className="border rounded flex-row flex-1 bg-orange-100 mb-2 w-full h-44">
                 <TouchableOpacity className="border h-10 items-center justify-center w-10 bg-white">
                     <Text>
-                        🗑️
+                        🗑️  
                     </Text>
                 </TouchableOpacity>
 

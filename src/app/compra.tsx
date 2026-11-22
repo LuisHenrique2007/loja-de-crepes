@@ -1,9 +1,9 @@
+import { Link } from 'expo-router';
 import {
     ScrollView,
     Text,
     TouchableOpacity,
 } from "react-native";
-import{Link} from 'expo-router';
 import { Produto } from "./Produto";
 
 //Colocar em <produto>, o produto que foi clicado.

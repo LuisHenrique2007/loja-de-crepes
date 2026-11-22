@@ -7,13 +7,26 @@ import {
 import { Produto } from "./Produto";
 import {Link} from "expo-router";
 import {ProdutoCarrinho} from "./ProdutoCarrinho";
+import { useState } from "react"; 
+
+
 
 export default function carrinho() {
+  const [precoTotal,setPrecoTotal]=useState(0);
+  const [cart,setCart] = useState<any[]>([]);
+  function addToCart(Produto: any){
+    setCart((current) => [...current,Produto])
+    setPrecoTotal(precoTotal+Produto.preco+1)
+  }
+  function retirarDoCarrinho(index:number){ 
+    setCart((current) => current.filter((_, itemIndex) => itemIndex !== index));
+    setPrecoTotal(precoTotal-cart[index].preco-1)
+  }
   return (
     <View className="flex-1 bg-white">
       <ScrollView className="flex-1">
         <View className="border rounded w-full h-44 flex-row flex-1 bg-orange-100 mb-2">
-          <TouchableOpacity className="border h-10 items-center justify-center w-10 bg-white">
+          <TouchableOpacity className="border h-10 items-center justify-center w-10 bg-white" onPress={() => retirarDoCarrinho(1)}>
             <Text>
               🗑️
             </Text>
@@ -47,7 +60,13 @@ export default function carrinho() {
             </TouchableOpacity>
           </View>
         </View>
-
+        {cart.map((item,index) => (
+          <View 
+          key={index}
+          >
+            <ProdutoCarrinho imagem={item.imagem} preco={item.preco} descricao={item.descricao}/>
+          </View>
+        ))}
       <ProdutoCarrinho imagem={require("@/assets/crepe/CrepeSuíço.png")} preco={1} descricao={"Crepe suíço"}/>
 
       </ScrollView>
