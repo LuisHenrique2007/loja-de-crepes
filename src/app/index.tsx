@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import {
   ScrollView,
   StyleSheet,
@@ -11,7 +11,6 @@ import {
 import { Produto } from "./Produto";
 import { useState, useEffect } from 'react';
 import Cardapio from "./Cardapio";
-
 
 
 export default function HomeScreen() {
@@ -44,12 +43,21 @@ export default function HomeScreen() {
       <Text className='mt-7 text-3xl font-bold mb-1'>
         Sabores
       </Text>
-      <FlatList numColumns={3}  data={pedido} renderItem={({item}) =>
-        <Link href="/compra" asChild>
-          <TouchableOpacity className="w-[20%] bg-orange-100 my-2 rounded mx-1 items-center">
+      <FlatList numColumns={3}  data={pedido} keyExtractor={(item,index)=> item.id.toString()} renderItem={({item}) =>
+          <TouchableOpacity className="w-[30%] bg-orange-100 my-2 rounded mx-1 items-center" onPress={() => {
+            router.push({pathname: "/compra", params: {descricao: item.descricao, imagem: item.imagem, preco: item.preco.toString()},})
+          }}>
             <Produto {... item}/>
+          </TouchableOpacity>}
+        ListFooterComponent={
+        <Link href="/carrinho" asChild>
+          <TouchableOpacity className="bg-orange-500 rounded items-center">
+            <Text className='font-bold'>
+              Ir ao carrinho
+            </Text>
           </TouchableOpacity>
-        </Link>}
+        </Link>
+        }
       /> 
     </View>
   );

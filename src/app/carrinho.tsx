@@ -11,9 +11,11 @@ import { useState } from "react";
 
 
 
+
 export default function carrinho() {
   const [precoTotal,setPrecoTotal]=useState(0);
   const [cart,setCart] = useState<any[]>([]);
+
   function addToCart(Produto: any){
     setCart((current) => [...current,Produto])
     setPrecoTotal(precoTotal+Produto.preco+1)
