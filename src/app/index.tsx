@@ -1,17 +1,15 @@
 import { Link, router } from 'expo-router';
+import { useEffect, useState } from 'react';
 import {
-  ScrollView,
-  StyleSheet,
+  FlatList,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  FlatList,
 } from "react-native";
-import { Produto } from "./Produto";
-import { useState, useEffect } from 'react';
 import Cardapio from "./Cardapio";
-
+import { Cart } from "./cart";
+import { Produto } from "./Produto";
 
 export default function HomeScreen() {
   const [pesquisado,setPesquisa]=useState("");
@@ -29,7 +27,7 @@ export default function HomeScreen() {
   }, [pesquisado])
 
   return (
-    <View>
+    <View className='flex-1 bg-white'>
       <View className="bg-orange-500 p-1 rounded">
         <Text className='text-xl font-bold text-white'>
           OFERTA ESPECIAL
@@ -53,7 +51,7 @@ export default function HomeScreen() {
         <Link href="/carrinho" asChild>
           <TouchableOpacity className="bg-orange-500 rounded items-center">
             <Text className='font-bold'>
-              Ir ao carrinho
+              Ir ao carrinho {Cart.length}
             </Text>
           </TouchableOpacity>
         </Link>

@@ -24,9 +24,6 @@ export default function AppTabs() {
           <TabTrigger name="home" href="/" asChild>
             <TabButton>Home</TabButton>
           </TabTrigger>
-          <TabTrigger name="explore" href="/explore" asChild>
-            <TabButton>Explore</TabButton>
-          </TabTrigger>
           <TabTrigger name="compra" href="/compra" asChild>
             <TabButton>compra</TabButton>
           </TabTrigger>
@@ -38,7 +35,6 @@ export default function AppTabs() {
     </Tabs>
   );
 }
-
 export function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
   return (
     <Pressable {...props} style={({ pressed }) => pressed && styles.pressed}>
